@@ -1,37 +1,39 @@
-## Project Structure
+# Rasa Customer Service Bot
 
-actions: Contains custom actions for the chatbot.
-configs: Configuration files for the chatbot.
-data: Data files used for training the chatbot.
-domain-grp: Domain group files.
-results: Directory for storing chatbot results.
-scripts: Scripts related to the chatbot.
-tests: Test files for testing the chatbot.
-.dockerignore: Ignore file for Docker.
-.gitignore: Ignore file for Git.
-Dockerfile: Dockerfile for building the chatbot container.
-citibot.html: HTML file for the chatbot interface.
-config.yml: Configuration file for the chatbot.
-credentials.yml: Credentials file for connecting to external services.
-domain.yml: Domain file defining the chatbot's domain.
-endpoints.yml: Endpoints configuration file.
-render.yaml: Render configuration file.
-testing.py: Python script for testing the chatbot.
-viewresults.py: Python script for viewing chatbot results.
-Setup and Usage
-Clone the repository.
-Install dependencies using pip install -r requirements.txt.
-Configure the chatbot by editing config.yml, credentials.yml, and other relevant configuration files.
-Train the chatbot using the training data in the data directory with the command rasa train.
-Start the action server using rasa run actions.
-Start the chatbot server using rasa run.
-Access the chatbot interface by opening citibot.html in a web browser.
+Welcome to the Rasa Customer Service Bot! This bot is designed to assist users from three different counties: Clay County, Utah, and West Hollywood. It provides customer service functionalities tailored to the needs and inquiries specific to each county.
 
-## Development
-Custom actions can be added or modified in the actions directory.
-Test cases can be written in the tests directory.
-Additional training data can be added to the data directory for improving the chatbot's performance.
+## File Structure
 
-## Docker
-The chatbot can be containerized using Docker. Use the provided Dockerfile for building the Docker image.
-Dockerignore file .dockerignore specifies which files and directories to exclude when building the Docker image.
+- **actions/**: Contains custom action files for the bot.
+- **configs/**: Configuration files for the bot, including different diet configurations.
+- **data/**: Data files containing NLU training data for frequently asked questions in each county.
+- **domain-grp/**: Domain files for each county's specific functionalities.
+- **results/**: Result files including confusion matrices, error logs, and histograms generated during testing.
+- **scripts/**: Shell scripts to start the services and shell for the bot.
+- **tests/**: Test stories to evaluate the bot's performance.
+- **.dockerignore**: Specifies which files and directories to exclude when building a Docker image.
+- **.gitignore**: Specifies intentionally untracked files to ignore.
+- **Dockerfile**: Instructions for building a Docker image for the bot.
+- **README.md**: You're currently reading it!
+- **citibot.html**: HTML file for the bot interface.
+- **config.yml**: Configuration file specifying the pipeline and policies for the bot.
+- **credentials.yml**: File to store credentials for external services.
+- **domain.yml**: Main domain file defining the bot's capabilities and responses.
+- **endpoints.yml**: Configuration file for the endpoints of the bot, like the action server.
+- **render.yaml**: Render configuration file.
+- **testing.py**: Python script for testing the bot.
+- **viewresults.py**: Python script to view test results.
+
+## Usage
+
+1. **Installation**: Make sure you have Python and Rasa installed on your system.
+2. **Training**: Train the bot using the training data provided in the `data/` directory and the configurations specified in `configs/`.
+3. **Testing**: Evaluate the bot's performance using the provided test stories in the `tests/` directory.
+4. **Deployment**: Deploy the bot using Docker or any other suitable platform.
+
+## Customization
+
+- **County-Specific Functionality**: Customize the bot's responses and actions based on the specific requirements of each county by modifying the domain files in `domain-grp/`.
+- **NLU Training**: Enhance the bot's understanding by adding more training data in the `data/` directory.
+- **Configuration**: Adjust the bot's behavior by modifying the configuration files in `configs/`.
+
